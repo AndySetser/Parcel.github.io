@@ -2,10 +2,10 @@
   "updated": "2026-07-07",
   "region": "Alamosa County, CO",
   "median_list_price": 342000,
-  "median_list_price_source": "sample placeholder — see README",
+  "median_list_price_source": "sample — Census fetch failed this run",
   "median_days_on_market": 41,
   "median_days_on_market_source": "sample — no free source found yet",
-  "mortgage_rate_30yr": 6.42,
-  "mortgage_rate_30yr_source": "sample placeholder",
-  "source": "sample placeholder — see README"
+  "mortgage_rate_30yr": 6.43,
+  "mortgage_rate_30yr_source": "FRED (live)",
+  "source": "Census ACS + FRED, best-effort per run"
 }
