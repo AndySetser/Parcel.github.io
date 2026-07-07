@@ -6,7 +6,7 @@
 <title>Parcel — Buy and sell without the guesswork</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#F3F1E7; --paper-card:#FFFFFF; --ink:#2B2A22; --ink-soft:#5C5A4B;
@@ -17,7 +17,7 @@
   html{scroll-behavior:smooth;}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:'Work Sans',sans-serif;overflow-x:hidden;}
   h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.01em;margin:0;}
-  .mono{font-family:'Space Mono',monospace;}
+  .mono{font-family:'Nunito',sans-serif;}
   a{color:inherit;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 32px;position:relative;z-index:2;}
   @media (max-width:640px){.wrap{padding:0 20px;}}
@@ -44,15 +44,24 @@
   .nav-links a.active{color:var(--ink);border-bottom-color:var(--mustard);}
   @media (max-width:900px){.nav-links{display:none;}}
 
+  .recruit-bar{
+    background:var(--ink);color:var(--paper);cursor:pointer;font-size:13px;font-family:'Work Sans',sans-serif;
+  }
+  .recruit-bar .wrap{flex-wrap:wrap;}
+  .recruit-dot{width:7px;height:7px;border-radius:50%;background:var(--mustard);flex-shrink:0;}
+  .recruit-arrow{font-family:'Nunito',sans-serif;font-size:12px;color:var(--mustard-soft);white-space:nowrap;text-decoration:underline;}
+  .recruit-bar:hover{background:#3a3829;}
+  @media (max-width:700px){.recruit-bar .wrap{padding:12px 20px;}}
+
   #app{min-height:60vh;}
   section{padding:72px 0;position:relative;}
   .section-head{margin-bottom:40px;max-width:56ch;}
-  .section-head .tag{font-family:'Space Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);background:var(--teal-soft);padding:5px 13px;border-radius:100px;display:inline-block;margin-bottom:16px;}
+  .section-head .tag{font-family:'Nunito',sans-serif;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);background:var(--teal-soft);padding:5px 13px;border-radius:100px;display:inline-block;margin-bottom:16px;}
   .section-head h1, .section-head h2{font-size:clamp(26px,3.4vw,38px);}
   .section-head p{color:var(--ink-soft);font-size:15.5px;margin-top:10px;line-height:1.6;}
-  .preview-flag{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'Space Mono',monospace;font-size:11.5px;color:var(--ink-soft);}
+  .preview-flag{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'Nunito',sans-serif;font-size:11.5px;color:var(--ink-soft);}
   .preview-flag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--clay);display:inline-block;}
-  .crumb{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-soft);margin-bottom:20px;display:inline-block;text-decoration:none;cursor:pointer;}
+  .crumb{font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink-soft);margin-bottom:20px;display:inline-block;text-decoration:none;cursor:pointer;}
   .crumb:hover{color:var(--teal);}
 
   /* hero (home) */
@@ -60,7 +69,7 @@
   .blob-hero-1{width:420px;height:420px;top:-140px;right:-120px;}
   .blob-hero-2{width:260px;height:260px;bottom:20px;left:-90px;}
   .hero-inner{max-width:640px;}
-  .eyebrow{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);background:var(--teal-soft);display:inline-block;padding:6px 14px;border-radius:100px;margin-bottom:22px;}
+  .eyebrow{font-family:'Nunito',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);background:var(--teal-soft);display:inline-block;padding:6px 14px;border-radius:100px;margin-bottom:22px;}
   .hero h1{font-size:clamp(34px,5vw,54px);line-height:1.1;}
   .hero h1 em{font-style:normal;color:var(--teal);}
   .hero p.lede{font-size:17px;max-width:48ch;margin-top:20px;color:var(--ink-soft);line-height:1.6;}
@@ -72,16 +81,16 @@
   .market-strip{margin-top:52px;padding:22px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;}
   .market-stat{flex:1;min-width:150px;padding:0 22px;border-left:1px solid var(--line);}
   .market-stat:first-child{border-left:none;padding-left:0;}
-  .market-stat .label{font-family:'Space Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);}
+  .market-stat .label{font-family:'Nunito',sans-serif;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);}
   .market-stat .value{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;margin-top:5px;}
-  .market-note{font-family:'Space Mono',monospace;font-size:11px;color:#9a9787;margin:12px 0 0;}
+  .market-note{font-family:'Nunito',sans-serif;font-size:11px;color:#9a9787;margin:12px 0 0;}
 
   /* hub cards (home + buying/selling) */
   .hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:820px){.hub-grid{grid-template-columns:1fr;}}
   .hub-card{background:var(--paper-card);border-radius:20px;padding:28px 24px;transition:transform .15s ease, box-shadow .15s ease;cursor:pointer;}
   .hub-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(43,42,34,0.1);}
-  .hub-card .ic{width:40px;height:40px;border-radius:50%;background:var(--mustard-soft);margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;}
+  .hub-card .ic{width:40px;height:40px;border-radius:50%;background:var(--mustard-soft);margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-weight:700;}
   .hub-card h3{font-size:17px;margin-bottom:8px;}
   .hub-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
 
@@ -98,15 +107,15 @@
   .listing-body{padding:20px;}
   .listing-price{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;}
   .listing-addr{font-size:14px;color:var(--ink-soft);margin-top:2px;}
-  .listing-meta{font-family:'Space Mono',monospace;font-size:11.5px;color:#9a9787;margin-top:8px;}
+  .listing-meta{font-family:'Nunito',sans-serif;font-size:11.5px;color:#9a9787;margin-top:8px;}
   .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px;}
-  .chip{font-size:11.5px;font-family:'Space Mono',monospace;padding:5px 11px;border-radius:100px;background:var(--paper);color:var(--ink-soft);}
-  .demand-badge{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:11.5px;padding:6px 12px;border-radius:100px;background:var(--teal);color:#fff;}
+  .chip{font-size:11.5px;font-family:'Nunito',sans-serif;padding:5px 11px;border-radius:100px;background:var(--paper);color:var(--ink-soft);}
+  .demand-badge{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-family:'Nunito',sans-serif;font-size:11.5px;padding:6px 12px;border-radius:100px;background:var(--teal);color:#fff;}
   .demand-badge .pip{width:6px;height:6px;border-radius:50%;background:var(--mustard);}
   .filter-row{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
   .filter-row input{flex:1;min-width:220px;padding:13px 20px;border:1.5px solid var(--line);border-radius:100px;font-family:'Work Sans',sans-serif;font-size:14px;background:var(--paper-card);}
   .filter-row input:focus{outline:none;border-color:var(--teal);}
-  .result-count{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-soft);margin-bottom:20px;}
+  .result-count{font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink-soft);margin-bottom:20px;}
 
   /* detail pages */
   .detail-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start;}
@@ -119,18 +128,18 @@
   .related-item{padding:12px 0;border-bottom:1px solid var(--line);font-size:13.5px;cursor:pointer;}
   .related-item:last-child{border-bottom:none;}
   .related-item:hover{color:var(--teal);}
-  .related-item .meta{font-family:'Space Mono',monospace;font-size:11px;color:#9a9787;margin-top:3px;}
+  .related-item .meta{font-family:'Nunito',sans-serif;font-size:11px;color:#9a9787;margin-top:3px;}
 
   /* signal / pin styling reused */
   .pin-card{width:240px;background:var(--paper-card);border-radius:16px;padding:18px 18px 16px;box-shadow:0 10px 24px rgba(43,42,34,0.07);cursor:pointer;transition:transform .15s ease;}
   .pin-card:hover{transform:translateY(-3px);}
   .pin-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;}
-  .pin-label{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:100px;display:inline-block;}
+  .pin-label{font-family:'Nunito',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:100px;display:inline-block;}
   .pin-label.want{background:var(--mustard-soft);color:var(--ink);}
   .pin-label.check{background:var(--teal-soft);color:var(--teal);}
-  .verified{font-family:'Space Mono',monospace;font-size:10px;color:var(--teal);display:flex;align-items:center;gap:3px;white-space:nowrap;}
+  .verified{font-family:'Nunito',sans-serif;font-size:10px;color:var(--teal);display:flex;align-items:center;gap:3px;white-space:nowrap;}
   .pin-text{font-size:13.5px;line-height:1.5;}
-  .pin-meta{font-family:'Space Mono',monospace;font-size:11px;color:#9a9787;margin-top:10px;}
+  .pin-meta{font-family:'Nunito',sans-serif;font-size:11px;color:#9a9787;margin-top:10px;}
   .follow-btn{margin-top:12px;width:100%;font-family:'Work Sans',sans-serif;font-weight:600;font-size:12.5px;padding:8px 0;border-radius:100px;border:1.5px solid var(--line);background:transparent;cursor:pointer;color:var(--ink-soft);}
   .follow-btn:hover{border-color:var(--teal);color:var(--teal);}
   .follow-btn.following{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
@@ -142,15 +151,24 @@
   .board-form{display:flex;gap:10px;flex:1;min-width:260px;}
   .board-form input{flex:1;padding:12px 18px;border:1.5px solid var(--line);border-radius:100px;font-family:'Work Sans',sans-serif;font-size:14px;background:var(--paper-card);}
   .board-form input:focus{outline:none;border-color:var(--teal);}
-  .board-hint{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-soft);margin:14px 0 26px;}
-  .board-hint button{border:none;background:none;font-family:'Space Mono',monospace;font-size:12px;color:var(--teal);text-decoration:underline;cursor:pointer;padding:0;}
+  .suggest-box{
+    position:absolute;top:calc(100% + 6px);left:0;right:90px;background:var(--paper-card);
+    border-radius:16px;box-shadow:0 12px 30px rgba(43,42,34,0.14);overflow:hidden;z-index:20;
+    max-height:260px;overflow-y:auto;
+  }
+  .suggest-item{padding:11px 18px;font-size:13.5px;cursor:pointer;border-bottom:1px solid var(--line);}
+  .suggest-item:last-child{border-bottom:none;}
+  .suggest-item:hover, .suggest-item.hl{background:var(--mustard-soft);}
+  .suggest-item .hit{font-weight:700;color:var(--teal);}
+  .board-hint{font-family:'Nunito',sans-serif;font-size:12px;color:var(--ink-soft);margin:14px 0 26px;}
+  .board-hint button{border:none;background:none;font-family:'Nunito',sans-serif;font-size:12px;color:var(--teal);text-decoration:underline;cursor:pointer;padding:0;}
 
   /* guide */
   .guide-tabs{display:flex;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden;width:fit-content;margin-bottom:28px;}
   .guide-tabs button{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;padding:11px 24px;border:none;background:var(--paper-card);cursor:pointer;}
   .guide-tabs button.active{background:var(--mustard);}
   .guide-panel{border-radius:24px;background:var(--paper-card);box-shadow:0 20px 50px rgba(43,42,34,0.1);max-width:620px;overflow:hidden;}
-  .guide-head{padding:16px 24px;border-bottom:1px solid var(--line);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;color:var(--ink-soft);}
+  .guide-head{padding:16px 24px;border-bottom:1px solid var(--line);font-family:'Nunito',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;color:var(--ink-soft);}
   .guide-body{padding:26px 24px;min-height:220px;display:flex;flex-direction:column;gap:16px;}
   .msg-bot{background:var(--paper);border-radius:16px;border-top-left-radius:4px;padding:13px 17px;font-size:14.5px;line-height:1.5;max-width:88%;}
   .msg-user{align-self:flex-end;background:var(--teal);color:#fff;border-radius:16px;border-bottom-right-radius:4px;padding:11px 17px;font-size:14px;max-width:80%;}
@@ -159,21 +177,21 @@
   .opt-btn:hover{background:var(--mustard);border-color:var(--mustard);}
   .result-card{border:1.5px dashed var(--line);border-radius:16px;padding:16px 18px;font-size:13.5px;line-height:1.55;}
   .guide-foot{padding:14px 24px;border-top:1px solid var(--line);text-align:right;}
-  .reset-link{font-family:'Space Mono',monospace;font-size:12px;color:var(--clay);cursor:pointer;background:none;border:none;text-decoration:underline;}
+  .reset-link{font-family:'Nunito',sans-serif;font-size:12px;color:var(--clay);cursor:pointer;background:none;border:none;text-decoration:underline;}
 
   /* timeline (reused on selling + agent) */
   .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   @media (max-width:820px){.timeline{grid-template-columns:1fr 1fr;}}
   @media (max-width:520px){.timeline{grid-template-columns:1fr;}}
   .tl-step{background:var(--paper-card);border-radius:20px;padding:26px 22px;position:relative;}
-  .tl-step .n{width:32px;height:32px;border-radius:50%;background:var(--mustard-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:13px;margin-bottom:16px;}
+  .tl-step .n{width:32px;height:32px;border-radius:50%;background:var(--mustard-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;margin-bottom:16px;}
   .tl-step h3{font-size:16.5px;margin-bottom:8px;}
   .tl-step p{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
   @media (min-width:821px){.tl-step:not(:last-child)::after{content:"→";position:absolute;right:-24px;top:26px;font-family:'Space Grotesk',sans-serif;color:var(--ink-soft);font-size:18px;}}
 
   /* agent page */
   .agent-card{background:var(--paper-card);border-radius:24px;padding:36px;box-shadow:0 20px 50px rgba(43,42,34,0.08);}
-  .agent-status{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:12px;color:var(--clay);background:var(--clay-soft);padding:6px 14px;border-radius:100px;margin-bottom:20px;}
+  .agent-status{display:inline-flex;align-items:center;gap:8px;font-family:'Nunito',sans-serif;font-size:12px;color:var(--clay);background:var(--clay-soft);padding:6px 14px;border-radius:100px;margin-bottom:20px;}
   .covers-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;}
   @media (max-width:700px){.covers-grid{grid-template-columns:1fr;}}
   .covers-grid ul{padding-left:18px;margin:8px 0 0;font-size:14px;color:var(--ink-soft);line-height:1.7;}
@@ -183,7 +201,7 @@
   .faq-item{border-bottom:1px solid var(--line);padding:22px 0;}
   .faq-item:first-child{padding-top:0;}
   .faq-q{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16.5px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
-  .faq-q .plus{font-family:'Space Mono',monospace;font-size:18px;color:var(--teal);transition:transform .2s ease;}
+  .faq-q .plus{font-family:'Nunito',sans-serif;font-size:18px;color:var(--teal);transition:transform .2s ease;}
   .faq-a{font-size:14.5px;color:var(--ink-soft);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .25s ease, margin .25s ease;margin-top:0;}
   .faq-item.open .faq-a{max-height:240px;margin-top:12px;}
   .faq-item.open .plus{transform:rotate(45deg);}
@@ -193,7 +211,7 @@
   .foot-links{display:flex;gap:20px;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;}
   .foot-links a{text-decoration:none;cursor:pointer;}
   .foot-links a:hover{color:var(--ink);}
-  .foot-note{font-family:'Space Mono',monospace;font-size:11.5px;color:#9a9787;}
+  .foot-note{font-family:'Nunito',sans-serif;font-size:11.5px;color:#9a9787;}
 </style>
 </head>
 <body>
@@ -211,6 +229,14 @@
     <a class="btn btn-sm btn-mustard" onclick="go('selling')">List — flat $1,000</a>
   </div>
 </nav>
+
+<div class="recruit-bar" onclick="go('agent')">
+  <div class="wrap" style="display:flex;align-items:center;gap:10px;padding:10px 32px;">
+    <span class="recruit-dot"></span>
+    <span>Still seeking our first licensed real estate partner to close transactions — every sale here ends with a real person, not just software.</span>
+    <span class="recruit-arrow">See the role →</span>
+  </div>
+</div>
 
 <div id="app"></div>
 
@@ -268,6 +294,46 @@ const exampleWants = [
   "EV charger already installed in the garage",
   "Wood-burning stove or fireplace insert, not gas"
 ];
+
+/* Big, specific suggestion dictionary for the demand board typeahead —
+   the kind of stuff regular listing filters don't cover. Grows at runtime
+   as people post new phrases (see learnedPhrases below). */
+const SUGGESTIONS = [
+  "Skylight in the primary bedroom","In-ground pool","Saltwater pool, not chlorine",
+  "Basketball court or half-court slab","Wrap-around porch","South-facing windows for solar gain",
+  "North-facing primary bedroom, avoids afternoon heat","Sauna already installed","Wine cellar or wine fridge built in",
+  "Home theater room, pre-wired for surround sound","She-shed or standalone studio","Tree house already built",
+  "Fire pit area with seating","Outdoor kitchen","Wood-fired pizza oven","Hot tub included",
+  "Zero-step entry, no stairs to the front door","Wide doorways for wheelchair access","Walk-in shower, no threshold",
+  "Single-level living, no stairs at all","ADU or guest house on the property","Income-producing rental unit attached",
+  "Original hardwood floors","Exposed brick","High ceilings, 9 feet or more","Clawfoot tub",
+  "Primary suite on the main floor","Laundry room upstairs near the bedrooms","Mudroom with exterior access",
+  "Dog wash station","Whole-home battery backup","Creek or stream frontage","Pond on the property",
+  "Horse arena or round pen","Tack room in the barn","Raised garden beds already built","Mature shade trees",
+  "Low-water xeriscaped yard","Drip irrigation system installed","Covered RV parking with hookups",
+  "Boat storage or dock access","Car lift in the garage","Home recording studio, soundproofed",
+  "Keyless entry","Video doorbell pre-wired","Security system pre-wired","Three-car garage",
+  "Covered patio","Screened-in porch","Butler's pantry","Walk-in pantry","Heated floors in the bathroom",
+  "Tankless water heater","Whole-house water filtration","Radon mitigation system already installed",
+  "Whole-home standby generator","Corner lot","Quiet cul-de-sac, no through traffic","Unobstructed mountain view",
+  "Dark-sky views for stargazing","Top-rated school district","Walk score above 80, no highway crossing",
+  "Bike storage in the garage or shed","Attached greenhouse or hoop house","Orchard or established fruit trees",
+  "Vineyard-ready south slope","Cistern or rainwater catchment system","Propane tank owned, not leased",
+  "Detached studio with its own heat source","Basement apartment with a separate entrance",
+  "Jack-and-jill bathroom between two bedrooms","Built-in bookshelves","Window seats","Large walk-in closets",
+  "Standing-seam metal roof","Roof replaced within the last 5 years","New HVAC within the last 5 years",
+  "Smart thermostat already installed","240V outlet ready for an EV, even without the charger yet",
+  "Whole-home Wi-Fi mesh already wired","Fenced yard, dog-ready","Doggy door already installed",
+  "Home office with its own exterior entrance","Art studio with north-light windows"
+];
+
+/* Phrases people actually post get folded back into future suggestions —
+   this is what "keeps learning" means here: session-only for now (no
+   backend yet), but the mechanism is real. */
+let learnedPhrases = [];
+function allSuggestions(){
+  return [...new Set([...SUGGESTIONS, ...learnedPhrases])];
+}
 const featureOptions = ["Well water rights","Detached workshop, 220V","Owned solar panels","Mother-in-law suite","Fenced horse pasture","No HOA","Root cellar / storm shelter","Fiber internet confirmed"];
 let searchQuery = "";
 
@@ -358,11 +424,11 @@ function viewHome(){
         </div>
       </div>
       <div class="market-strip">
-        <div class="market-stat"><div class="label">Alamosa County, CO</div><div class="value">$342,000</div></div>
-        <div class="market-stat"><div class="label">Median days on market</div><div class="value">41 days</div></div>
-        <div class="market-stat"><div class="label">30-yr mortgage rate</div><div class="value">6.42%</div></div>
+        <div class="market-stat"><div class="label">Alamosa County, CO</div><div class="value" id="statPrice">$342,000</div></div>
+        <div class="market-stat"><div class="label">Median days on market</div><div class="value" id="statDom">41 days</div></div>
+        <div class="market-stat"><div class="label">30-yr mortgage rate</div><div class="value" id="statRate">6.42%</div></div>
       </div>
-      <div class="market-note">Preview snapshot — connects to a live market feed at launch.</div>
+      <div class="market-note" id="marketNote">Sample snapshot — the mortgage rate updates live once hosted with data.json present; price and DOM are still placeholders.</div>
     </div>
   </header>
 
@@ -459,9 +525,10 @@ function viewBoard(){
           <button id="segWant" class="active" onclick="setBoardMode('want')">I'm looking for a home</button>
           <button id="segCheck" onclick="setBoardMode('check')">I own a home</button>
         </div>
-        <div class="board-form">
-          <input id="boardInput" type="text" placeholder="e.g. well water rights, not just a domestic-use permit" />
+        <div class="board-form" style="position:relative;">
+          <input id="boardInput" type="text" autocomplete="off" placeholder="e.g. well water rights, not just a domestic-use permit" />
           <button class="btn btn-sm btn-teal" onclick="submitPin()">Pin it</button>
+          <div id="suggestBox" class="suggest-box" style="display:none;"></div>
         </div>
       </div>
       <div class="board-hint">Not sure what to pin? <button onclick="fillExample()">Try an example</button></div>
@@ -480,17 +547,47 @@ function setBoardMode(m){
 function fillExample(){
   document.getElementById('boardInput').value = exampleWants[Math.floor(Math.random()*exampleWants.length)];
 }
+
+/* ---------- typeahead ---------- */
+function renderSuggestions(){
+  const input = document.getElementById('boardInput');
+  const box = document.getElementById('suggestBox');
+  if(!input || !box) return;
+  const q = input.value.trim().toLowerCase();
+  if(q.length < 2 || boardMode !== 'want'){ box.style.display = 'none'; box.innerHTML = ''; return; }
+  const matches = allSuggestions().filter(s => s.toLowerCase().includes(q)).slice(0, 7);
+  if(matches.length === 0){ box.style.display = 'none'; box.innerHTML = ''; return; }
+  box.innerHTML = matches.map(m => {
+    const i = m.toLowerCase().indexOf(q);
+    const highlighted = i >= 0 ? m.slice(0,i) + '<span class="hit">' + m.slice(i,i+q.length) + '</span>' + m.slice(i+q.length) : m;
+    return `<div class="suggest-item" onclick="pickSuggestion('${m.replace(/'/g,"\\'")}')">${highlighted}</div>`;
+  }).join('');
+  box.style.display = 'block';
+}
+function pickSuggestion(text){
+  document.getElementById('boardInput').value = text;
+  document.getElementById('suggestBox').style.display = 'none';
+}
+function learnPhrase(text){
+  const clean = text.trim();
+  if(clean.length > 4 && !allSuggestions().some(s => s.toLowerCase() === clean.toLowerCase())){
+    learnedPhrases.push(clean);
+  }
+}
 function submitPin(){
   const input = document.getElementById('boardInput');
   const text = input.value.trim();
   if(!text) return;
   if(boardMode === 'want'){
+    learnPhrase(text);
     PINS.unshift({id:pinCounter++, type:'want', verified:false, text, meta:"posted by a buyer, just now", following:false});
   } else {
     const matches = Math.floor(Math.random()*6)+1;
     PINS.unshift({id:pinCounter++, type:'check', verified:false, text:`${text} — ${matches} active buyer signal${matches>1?'s':''} match nearby`, meta:"posted by an owner, just now", following:false});
   }
   input.value = '';
+  const box = document.getElementById('suggestBox');
+  if(box){ box.style.display = 'none'; box.innerHTML = ''; }
   renderCorkboard();
 }
 function renderCorkboard(){
@@ -594,6 +691,7 @@ function startGuide(){
           if(choice === "See this listing"){ go('listing/'+match.id); }
           else {
             PINS.unshift({id:pinCounter++, type:'want', verified:false, text:`${feature}, ${area.toLowerCase()}`, meta:"posted by a buyer, just now", following:false});
+            learnPhrase(`${feature}, ${area.toLowerCase()}`);
             addBotMsg("Pinned. You'll show up as active demand for anyone checking their home nearby.");
           }
         });
@@ -723,15 +821,52 @@ function renderFaq(){
   });
 }
 
+/* ---------------- live market data ----------------
+   Tries to fetch data.json (same-origin, written by the GitHub Action in
+   .github/workflows/update-mortgage-rate.yml). If it's missing or fails —
+   e.g. when this file is just opened locally, or previewed standalone —
+   it quietly keeps the sample numbers already in the HTML. Nothing breaks
+   either way.
+*/
+async function fetchMarketData(){
+  try{
+    const res = await fetch('data.json', {cache:'no-store'});
+    if(!res.ok) return;
+    const d = await res.json();
+    if(d.mortgage_rate_30yr && document.getElementById('statRate')){
+      document.getElementById('statRate').textContent = d.mortgage_rate_30yr + '%';
+    }
+    if(d.median_list_price && document.getElementById('statPrice')){
+      document.getElementById('statPrice').textContent = '$' + Number(d.median_list_price).toLocaleString();
+    }
+    if(d.median_days_on_market && document.getElementById('statDom')){
+      document.getElementById('statDom').textContent = d.median_days_on_market + ' days';
+    }
+    const note = document.getElementById('marketNote');
+    if(note){
+      note.textContent = `Updated ${d.updated || 'recently'} · price: ${d.median_list_price_source || 'sample'} · rate: ${d.mortgage_rate_30yr_source || 'sample'}`;
+    }
+  } catch(e){
+    /* data.json not present yet (e.g. local preview) — sample numbers stay as-is */
+  }
+}
+
 /* ---------------- post-render wiring ---------------- */
 function afterRender(route, parts){
+  if(route === 'home') fetchMarketData();
   if(route === 'buy'){
     renderBuyResults();
     document.getElementById('buyFilter').addEventListener('input', renderBuyResults);
   }
   if(route === 'board'){
     renderCorkboard();
-    document.getElementById('boardInput').addEventListener('keydown', e=>{ if(e.key==='Enter') submitPin(); });
+    const bi = document.getElementById('boardInput');
+    bi.addEventListener('keydown', e=>{ if(e.key==='Enter'){ document.getElementById('suggestBox').style.display='none'; submitPin(); } });
+    bi.addEventListener('input', renderSuggestions);
+    document.addEventListener('click', function outsideClick(e){
+      const box = document.getElementById('suggestBox');
+      if(box && !e.target.closest('.board-form')) box.style.display = 'none';
+    });
   }
   if(route === 'signal'){
     const btn = document.getElementById('followBtn');
